@@ -1,0 +1,9 @@
+{
+  "name": "mathador",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Recréation web du jeu de calcul mental Mathador",
+  "scripts": {
+    "test": "node test.js"
+  }
+}

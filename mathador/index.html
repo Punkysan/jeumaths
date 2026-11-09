@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mathador — le jeu de calcul mental</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>Mathador</h1>
+      <div class="scoreboard">
+        <span>Score&nbsp;: <strong id="totalScore">0</strong></span>
+        <span>Manche&nbsp;: <strong id="roundNum">1</strong></span>
+      </div>
+    </header>
+
+    <section class="target-box">
+      <span class="target-label">🎯 Nombre cible</span>
+      <span class="target-value" id="target">?</span>
+    </section>
+
+    <section class="numbers" id="numbers" aria-label="nombres du tirage"></section>
+
+    <section class="expression">
+      <div class="expr-chips" id="expr"></div>
+      <div class="expr-value" id="exprValue"></div>
+    </section>
+
+    <section class="pad" id="pad" aria-label="opérateurs">
+      <button type="button" data-action="op" data-op="+">+</button>
+      <button type="button" data-action="op" data-op="-">−</button>
+      <button type="button" data-action="op" data-op="*">×</button>
+      <button type="button" data-action="op" data-op="/">÷</button>
+      <button type="button" data-action="lp">(</button>
+      <button type="button" data-action="rp">)</button>
+      <button type="button" data-action="back" title="effacer">⌫</button>
+      <button type="button" data-action="clear" title="tout effacer">C</button>
+    </section>
+
+    <section class="actions">
+      <button type="button" id="btnCheck" class="btn primary">Vérifier</button>
+      <button type="button" id="btnSolution" class="btn">Solution</button>
+      <button type="button" id="btnNew" class="btn">Nouveau tirage</button>
+    </section>
+
+    <p class="message" id="message"></p>
+
+    <details class="rules">
+      <summary>Règles du jeu</summary>
+      <ul>
+        <li>Le tirage comporte <strong>4 petits nombres</strong> (1 à 9&nbsp;: 1 à 4 peuvent apparaître au plus 2 fois, 5 à 9 au plus 1 fois) et <strong>1 grand nombre</strong> (10 à 99), plus une <strong>cible</strong> entre 1 et 99.</li>
+        <li>Atteins la cible avec <strong>+ − × ÷</strong> et les parenthèses. Chaque nombre du tirage ne peut être utilisé <strong>qu’une seule fois</strong> (on n’est pas obligé de tous les utiliser), et il faut au moins une opération.</li>
+        <li>Les résultats intermédiaires doivent être des <strong>entiers strictement positifs</strong>&nbsp;; une division n’est autorisée que si elle est exacte.</li>
+        <li>Points&nbsp;: <strong>+ = 1 pt, × = 1 pt, − = 2 pts, ÷ = 3 pts</strong>. Utiliser les <strong>5 nombres et les 4 opérations</strong> = <strong>coup Mathador = 13 points</strong>.</li>
+      </ul>
+    </details>
+  </main>
+
+  <script src="mathador.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
